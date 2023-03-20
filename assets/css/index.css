@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primaryColor: #2196f3;
+    --secondaryColor: #e91e63;
+    --textColor: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    transition: .5s;
+}
+
+.wrapper::before {
+    content: '';
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    width: 150px;
+    height: 150px;
+    background: url('../images/dotted.png');
+    background-size: cover;
+    transition: .5s;
+    transition-delay: -5s;
+    animation: animateTranslateY 10s linear infinite;
+}
+
+.wrapper.dark {
+    background: var(--textColor);
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    color: var(--textColor);
+    font-size: 2em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav .logo span {
+    color: var(--primaryColor);
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: .5s;
+}
+
+nav ul li a:hover {
+    color: var(--primaryColor);
+}
+
+main {
+    position: relative;
+    max-width: 700px;
+    z-index: 10;
+}
+
+main h3 {
+    color: var(--textColor);
+    font-size: 2em;
+    font-weight: 300;
+    transition: .5s;
+}
+main h2 {
+    color: var(--textColor);
+    font-size: 5.5em;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: .5s;
+}
+
+main h2 span {
+    color: var(--secondaryColor);
+}
+
+main p {
+    color: #666;
+    font-size: 1.2em;
+    margin: 10px 0;
+    transition: 0.5s;
+}
+
+main button {
+    position: relative;
+    border: none;
+    outline: none;
+    padding: 15px 35px;
+    background: var(--primaryColor);
+    border-radius: 4px;
+    margin-right: 20px;
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+main button:hover {
+    background: #0072cf;
+}
+
+main button.chat {
+    background: transparent;
+    color: var(--textColor);
+}
+main button.chat:hover {
+    color: var(--secondaryColor);
+}
+
+main button.chat ion-icon {
+    position: relative;
+    color: var(--secondaryColor);
+    font-size: 1.5em;
+    top: 5px;
+}
+
+.colors {
+    position: absolute;
+    right: 0;
+    max-width: 800px;
+    transition: .5s;
+    animation: animateTranslateY 8s ease-in-out infinite;
+}
+
+@keyframes animateTranslateY {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+}
+
+.men {
+    position: absolute;
+    right: 150px;
+    bottom: 0;
+    max-height: 85vh;
+    transition: .5s;
+    animation: animateTranslateX 8s ease-in-out infinite;
+}
+
+@keyframes animateTranslateX {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50px);
+    }
+}
+
+.sci {
+    position: absolute;
+    bottom: 35px;
+    display: flex;
+    gap: 20px;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    text-decoration: none;
+    color: var(--textColor);
+    font-size: 1.75em;
+    transition: .5s;
+}
+
+.sci li a:hover {
+    color: var(--primaryColor);
+}
+
+.dark-mode {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.wrapper.dark .dark-mode {
+    background: #444;
+    color: #fff;
+}
+
+.dark-mode ion-icon:nth-child(2),
+.wrapper.dark .dark-mode ion-icon:nth-child(1) {
+    display: none;
+}
+
+.wrapper.dark .dark-mode ion-icon:nth-child(2) {
+    display: block;
+}
+
+.wrapper.dark nav .logo,
+.wrapper.dark nav ul li a,
+.wrapper.dark main h3,
+.wrapper.dark main h2,
+.wrapper.dark main p,
+.wrapper.dark main button.chat,
+.wrapper.dark .sci li a {
+    color: #fff;
+}
+
+.wrapper.dark nav ul li a:hover,
+.wrapper.dark .sci li a:hover {
+    color: var(--primaryColor);
+}
+
+.wrapper.dark main button.chat:hover {
+    color: var(--secondaryColor);
+}
